@@ -1,14 +1,10 @@
 package com.arghyabandyopadhyay.ikep.patientdonordata.model;
 
 import com.arghyabandyopadhyay.ikep.patientdonordata.converter.StringListConverter;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,7 +17,6 @@ public class PatientDonorData {
     @Column(name = "id", updatable = false, nullable = false)
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
-    private int indexVertex;
     private String name;
     private String bloodGroup;
     @Convert(converter = StringListConverter.class)
@@ -45,9 +40,8 @@ public class PatientDonorData {
     public PatientDonorData() {
     }
 
-    public PatientDonorData(UUID id, int indexVertex, String name, String bloodGroup, List<String> hla, int age, double kidneySize, int pincode, String nameOfDonor, String bloodGroupOfDonor, List<String> hlaOfDonor, int ageOfDonor, double kidneySizeOfDonor, int pincodeOfDonor, int priority, List<String> societalPreference, String societalDistributionOfDonor, String mobileNumber) {
+    public PatientDonorData(UUID id, String name, String bloodGroup, List<String> hla, int age, double kidneySize, int pincode, String nameOfDonor, String bloodGroupOfDonor, List<String> hlaOfDonor, int ageOfDonor, double kidneySizeOfDonor, int pincodeOfDonor, int priority, List<String> societalPreference, String societalDistributionOfDonor, String mobileNumber) {
         this.id = id;
-        this.indexVertex = indexVertex;
         this.name = name;
         this.bloodGroup = bloodGroup;
         this.hla = hla;
@@ -72,14 +66,6 @@ public class PatientDonorData {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public int getIndexVertex() {
-        return indexVertex;
-    }
-
-    public void setIndexVertex(int indexVertex) {
-        this.indexVertex = indexVertex;
     }
 
     public String getName() {
