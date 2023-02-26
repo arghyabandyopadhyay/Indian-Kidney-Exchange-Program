@@ -35,6 +35,7 @@ public class PatientDonorDataServiceImpl implements PatientDonorDataService {
             if(temp.isEmpty())throw new EntityNotFoundException();
             throw new PatientDonorDataAlreadyExistsException();
         }catch(EntityNotFoundException e){
+            if(patientDonorData.getSocietalPreference().size()==1&&patientDonorData.getSocietalPreference().get(0).isEmpty())patientDonorData.setSocietalPreference(null);
             added = patientDonorDataRepository.save(patientDonorData);
         }
         return added;
@@ -65,6 +66,10 @@ public class PatientDonorDataServiceImpl implements PatientDonorDataService {
         Optional<PatientDonorData> optionalPatientDonorData= patientDonorDataRepository.findById(id);
         if(optionalPatientDonorData.isPresent()) patientDonorDataRepository.delete(optionalPatientDonorData.get());
         else throw new PatientDonorDataNotExistsException();
+    }
+    @Override
+    public void deleteAllPatientDonorData() {
+        patientDonorDataRepository.deleteAll();
     }
 
     @Override
