@@ -40,6 +40,25 @@ public class PatientDonorData {
     public PatientDonorData() {
     }
 
+    public PatientDonorData(String name, String bloodGroup, List<String> hla, int age, double kidneySize, int pincode, String nameOfDonor, String bloodGroupOfDonor, List<String> hlaOfDonor, int ageOfDonor, double kidneySizeOfDonor, int pincodeOfDonor, int priority, List<String> societalPreference, String societalDistributionOfDonor, String mobileNumber) {
+        this.name = name;
+        this.bloodGroup = bloodGroup;
+        this.hla = hla;
+        this.age = age;
+        this.kidneySize = kidneySize;
+        this.pincode = pincode;
+        this.nameOfDonor = nameOfDonor;
+        this.bloodGroupOfDonor = bloodGroupOfDonor;
+        this.hlaOfDonor = hlaOfDonor;
+        this.ageOfDonor = ageOfDonor;
+        this.kidneySizeOfDonor = kidneySizeOfDonor;
+        this.pincodeOfDonor = pincodeOfDonor;
+        this.priority = priority;
+        this.societalPreference = societalPreference;
+        this.societalDistributionOfDonor = societalDistributionOfDonor;
+        this.mobileNumber=mobileNumber;
+    }
+
     public PatientDonorData(UUID id, String name, String bloodGroup, List<String> hla, int age, double kidneySize, int pincode, String nameOfDonor, String bloodGroupOfDonor, List<String> hlaOfDonor, int ageOfDonor, double kidneySizeOfDonor, int pincodeOfDonor, int priority, List<String> societalPreference, String societalDistributionOfDonor, String mobileNumber) {
         this.id = id;
         this.name = name;
