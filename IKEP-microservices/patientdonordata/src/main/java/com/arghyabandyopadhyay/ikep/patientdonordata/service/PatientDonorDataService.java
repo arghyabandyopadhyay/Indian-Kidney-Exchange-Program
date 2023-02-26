@@ -15,6 +15,7 @@ public interface PatientDonorDataService {
     public PatientDonorData getPatientDonorDataUsingMobileNumber(String mobileNo) throws PatientDonorDataNotExistsException;
     public void updatePatientDonorData(PatientDonorData patientDonorData)throws PatientDonorDataNotExistsException;
     public void deletePatientDonorData(UUID id)throws PatientDonorDataNotExistsException;
+    public void deleteAllPatientDonorData();
 
     public List<PatientDonorData> getAllPatientDonorData();
 }
