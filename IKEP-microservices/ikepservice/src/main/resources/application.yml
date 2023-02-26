@@ -1,0 +1,33 @@
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+  instance:
+    hostname: localhost
+
+
+spring:
+  application:
+    name: IKEPPatientDonorData
+  
+ikepexchangecycle:
+  sPrefMax: 32
+  maxCycleLength: 10000
+  edgeFilter: 20
+  ageFilter:  40
+  ageReducingCoefficient: 0.15
+  maxAgeScore:  6
+  maxABOScore:  6
+  maxPinScore:  6
+  maxKidneyScore: 6
+  kidneyFilter: 3
+  pincodeFilter:  1
+  pincodeReducingCoeff1:  2
+  pincodeReducingCoeff2:  3
+  usingSAS: true
